@@ -2,11 +2,13 @@ from card import Card
 
 class Director:
 
+    # Keep track of player score.
     def __init__(self):
         self.score = 300
         self.is_playing = True
         self.card = Card()
     
+    # Game loop.
     def start_game(self):
         while self.is_playing:
             card_one = self.card.show_card()
@@ -15,6 +17,7 @@ class Director:
             self.do_updates(guess, card_one, card_two)
             self.play_again()
     
+    # Gets user's guess.
     def get_input(self):
         guess = input("High or low? [Hi/Lo]: ")
         return guess.capitalize()
